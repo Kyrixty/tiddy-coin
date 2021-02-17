@@ -1,0 +1,6 @@
+::selection {
+    background: #2E0854; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: #2E0854; /* Gecko Browsers */
+}

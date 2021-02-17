@@ -1,0 +1,10 @@
+#Pkgs, last updated Feb 16, 2021 @1:23PM
+flask 
+flask-sqlalchemy 
+flask-login 
+flask-migrate
+flask-socketio 
+python-dotenv 
+requests
+colorama
+eventlet

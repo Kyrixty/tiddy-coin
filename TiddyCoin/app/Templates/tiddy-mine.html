@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='tiddy-mine.css') }}">
+    <head>
+        <title>TiddyCoin - A pretty coin</title>
+        <!--<script src=https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js></script>-->
+        <script src="{{ url_for('static', filename='socketio.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='tiddy-mine.js') }}"></script>
+    </head>
+
+    <body>
+        <div id="topBar">
+            <img id="menuBtn" src="{{ url_for('static', filename='menu.png') }}">
+            <p class="genericText" id="header">TiddyCoin</p>
+        </div>
+        {% for transaction in transactions %}
+        <div class="block">
+            <p style="color: white;">Date: {{ transaction["date"] }}</p>
+            <p style="color: white;">Time: {{ transaction["time"] }}</p>
+            <p style="color: white;">Sender: {{ transaction["sender"] }}</p>
+            <p style="color: white;">Receiver: {{ transaction["receiver"] }}</p>
+            <p style="color: white;">Amount: {{ transaction["amt"] }}</p>
+            <p style="color: white;">Hash: {{ transaction["hash"] }}</p>
+        </div>
+        {% endfor %}
+        <p class="genericText" id="versionText">V{{ version }}</p>
+    </body>
+</html>
