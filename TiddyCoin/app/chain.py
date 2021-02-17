@@ -153,18 +153,3 @@ class TiddyTransaction:
         hashString = self.sender + self.receiver + str(self.amt) + str(self.time)
         hashEncoded = json.dumps(hashString, sort_keys=True).encode()
         return hashlib.sha256(hashEncoded).hexdigest()
-
-needle = input()
-haystack = input()
-astr=""
-x=0
-for l in haystack:
-   astr+=l
-   if needle in astr:
-      if len(needle)==1:
-         astr=""
-      else:
-         astr=astr[-1]
-         print(astr)
-      x+=1
-print(x)
